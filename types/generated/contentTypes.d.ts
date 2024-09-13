@@ -856,6 +856,7 @@ export interface ApiIngredientIngredient extends Schema.CollectionType {
     singularName: 'ingredient';
     pluralName: 'ingredients';
     displayName: 'Ingredient';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -864,13 +865,7 @@ export interface ApiIngredientIngredient extends Schema.CollectionType {
     name: Attribute.String;
     description: Attribute.Text;
     price: Attribute.Integer;
-    images: Attribute.Text &
-      Attribute.CustomField<
-        'plugin::string-array.input',
-        {
-          separator: 'semicolon';
-        }
-      >;
+    image: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

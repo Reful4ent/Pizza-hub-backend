@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ingredient",
     "pluralName": "ingredients",
-    "displayName": "Ingredient"
+    "displayName": "Ingredient",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,12 +21,8 @@
     "price": {
       "type": "integer"
     },
-    "images": {
-      "type": "customField",
-      "options": {
-        "separator": "semicolon"
-      },
-      "customField": "plugin::string-array.input"
+    "image": {
+      "type": "text"
     }
   }
 }
