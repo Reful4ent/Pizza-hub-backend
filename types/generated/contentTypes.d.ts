@@ -916,6 +916,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
           separator: 'semicolon';
         }
       >;
+    addIngredient: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -40,6 +40,9 @@
         "separator": "semicolon"
       },
       "customField": "plugin::string-array.input"
+    },
+    "addIngredient": {
+      "type": "boolean"
     }
   }
 }
