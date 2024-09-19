@@ -3,7 +3,6 @@ import productCalculate from "../routes/product-calculate";
 export default{
   productCalculate: async(ctx) => {
     let totalPrice = 0;
-    console.log(ctx.request.body);
     const productCharacteristcs = ctx.request.body;
 
     const product = await strapi.entityService.findOne('api::product.product',productCharacteristcs.productId, {
@@ -15,7 +14,7 @@ export default{
 
 
     for(let i = 0; i < product.price.length; i++) {
-      if (product.price[i].name != productCharacteristcs.currentSize.name)
+      if (product.price[i].id != productCharacteristcs.currentSize.id)
         continue;
       totalPrice += product.price[i].price;
     }
