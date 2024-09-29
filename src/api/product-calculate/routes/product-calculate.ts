@@ -10,6 +10,15 @@ export default {
         policies:[],
         middlewares:[],
       }
+    },
+    {
+      method: 'POST',
+      path: '/productFromCartCalculate',
+      handler: 'product-calculate.productFromCartCalculate',
+      config: {
+        policies:[],
+        middlewares:[],
+      }
     }
   ]
 }
