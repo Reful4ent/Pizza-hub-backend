@@ -11,10 +11,21 @@ export interface PricePrice extends Schema.Component {
   };
 }
 
+export interface ImagesUrlImagesUrl extends Schema.Component {
+  collectionName: 'components_images_url_images_urls';
+  info: {
+    displayName: 'imagesURL';
+  };
+  attributes: {
+    URL: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'price.price': PricePrice;
+      'images-url.images-url': ImagesUrlImagesUrl;
     }
   }
 }

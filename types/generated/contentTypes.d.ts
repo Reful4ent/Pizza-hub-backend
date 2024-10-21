@@ -909,14 +909,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::ingredient.ingredient'
     >;
-    images: Attribute.Text &
-      Attribute.CustomField<
-        'plugin::string-array.input',
-        {
-          separator: 'semicolon';
-        }
-      >;
     addIngredient: Attribute.Boolean;
+    imagesURL: Attribute.Component<'images-url.images-url', true> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

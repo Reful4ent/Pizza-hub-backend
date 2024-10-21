@@ -34,15 +34,15 @@
       "relation": "oneToMany",
       "target": "api::ingredient.ingredient"
     },
-    "images": {
-      "type": "customField",
-      "options": {
-        "separator": "semicolon"
-      },
-      "customField": "plugin::string-array.input"
-    },
     "addIngredient": {
       "type": "boolean"
+    },
+    "imagesURL": {
+      "displayName": "imagesURL",
+      "type": "component",
+      "repeatable": true,
+      "component": "images-url.images-url",
+      "required": true
     }
   }
 }

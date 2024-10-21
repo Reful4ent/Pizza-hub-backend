@@ -3,7 +3,7 @@ import category from "../../category/routes/category";
 export default {
   GetFilteredProductList: async (ctx) => {
     console.log(ctx.request.body)
-    const pageSize = 3;
+    const pageSize = 5;
 
 
     const filters =
@@ -20,7 +20,7 @@ export default {
           category: true,
           price: true,
           ingredients: true,
-          images: true,
+          imagesURL: true,
         },
     });
 
@@ -51,6 +51,8 @@ export default {
       )
 
     }
+
+
 
     filteredProductList = filteredProductList?.sort((firstProduct, secondProduct) => firstProduct.category.id - secondProduct.category.id);
 
