@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_order_ingredients_order_ingredients",
+  "info": {
+    "displayName": "Order-ingredient"
+  },
+  "options": {},
+  "attributes": {
+    "ingredient": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ingredient.ingredient"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  }
+}

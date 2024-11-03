@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "button_types",
+  "info": {
+    "singularName": "button-type",
+    "pluralName": "button-types",
+    "displayName": "ButtonType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    }
+  }
+}

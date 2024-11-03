@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_order_orders",
+  "info": {
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "OrderIngredient": {
+      "displayName": "Order-ingredient",
+      "type": "component",
+      "repeatable": true,
+      "component": "order-ingredients.order-ingredient"
+    }
+  }
+}

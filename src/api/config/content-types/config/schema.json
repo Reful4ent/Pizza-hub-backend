@@ -17,6 +17,20 @@
     },
     "iconUrl": {
       "type": "text"
+    },
+    "productButtonType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::button-type.button-type"
+    },
+    "colorStandardProductButton": {
+      "type": "string"
+    },
+    "colorHoverStandardProductButton": {
+      "type": "string"
+    },
+    "colorBoxShadowStandardProductButton": {
+      "type": "string"
     }
   }
 }

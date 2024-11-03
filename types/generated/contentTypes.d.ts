@@ -788,6 +788,37 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiButtonTypeButtonType extends Schema.CollectionType {
+  collectionName: 'button_types';
+  info: {
+    singularName: 'button-type';
+    pluralName: 'button-types';
+    displayName: 'ButtonType';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    type: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::button-type.button-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::button-type.button-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -832,6 +863,14 @@ export interface ApiConfigConfig extends Schema.SingleType {
   attributes: {
     name: Attribute.String;
     iconUrl: Attribute.Text;
+    productButtonType: Attribute.Relation<
+      'api::config.config',
+      'oneToOne',
+      'api::button-type.button-type'
+    >;
+    colorStandardProductButton: Attribute.String;
+    colorHoverStandardProductButton: Attribute.String;
+    colorBoxShadowStandardProductButton: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -877,6 +916,41 @@ export interface ApiIngredientIngredient extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::ingredient.ingredient',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'Order';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Order: Attribute.Component<'order.order', true>;
+    totalSum: Attribute.Float;
+    surname: Attribute.String;
+    name: Attribute.String;
+    phoneNumber: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
       'oneToOne',
       'admin::user'
     > &
@@ -948,9 +1022,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::button-type.button-type': ApiButtonTypeButtonType;
       'api::category.category': ApiCategoryCategory;
       'api::config.config': ApiConfigConfig;
       'api::ingredient.ingredient': ApiIngredientIngredient;
+      'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
     }
   }
